@@ -355,7 +355,7 @@ class Report
       $stmt->execute([
         ':id' => $reportId,
         ':rev' => $reportData['rev'] ?? null,
-        ':patient_id' => $reportData['patient_id']
+        ':patient_id' => $reportData["initial_details"]["patient_id"] ?? $reportData['patient_id']
       ]);
 
 
